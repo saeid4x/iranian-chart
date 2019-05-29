@@ -1,0 +1,21 @@
+.Header{
+    /* border:1px solid red; */
+    width: 100%;
+    height: 60px;
+    box-shadow: 1px 1px 3px 1px #0063B1;
+}
+.Header >img{
+    width:40px;
+    height: 40px;
+    float: right;
+    margin:8px 5px 0 0 ;
+
+}
+.Header > span{
+    color:white;
+    direction: rtl;
+    float: right;
+    margin: 17px 10px 0 0 ;
+    font-size: 22px;
+
+}

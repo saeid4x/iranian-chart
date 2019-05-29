@@ -2,7 +2,7 @@ var express=require('express'),
     bodyParser=require('body-parser'),
     path=require('path'),
     cors=require('cors');
-
+var routes=require('./Routes/routes');
 var app=express();
 app.use(bodyParser.urlencoded({
     extended:true
