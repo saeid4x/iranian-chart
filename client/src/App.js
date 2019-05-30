@@ -7,6 +7,8 @@ import '../src/css/Style.css';
 import MainLayout from './components/MainLayout'
  
 import RedirectToHome from './components/RedirectToHome';
+import ChartHolder from './components/ChartHolder';
+import SideNav from './components/SideNav';
 
 
 
@@ -16,10 +18,18 @@ import RedirectToHome from './components/RedirectToHome';
    render(){
     return (
       <Router>
-        <Switch>
+
+        <section>
+          <MainLayout/>
+          <SideNav/>
+          <Route  path="/iran/cat/:cat" component={ChartHolder}/> 
+           
+        
+    
+          </section>
        
-          <Route path="/iran/cat/:cat" component={MainLayout}/>        
-          </Switch>
+                
+          
 
         </Router>
    

@@ -65,10 +65,9 @@ export default class MainLayout extends Component{
                     <SmallCard cardClass="sc2"/>
                     <SmallCard cardClass="sc3"/> */}
 
-          <SideNav link="/iran/cat/:cat"/>
-                    
+          
  
-                   
+{/*                    
                     <LineChart
                          cat={this.props.match.params.cat}
                          chartType='خطی'
@@ -90,7 +89,7 @@ export default class MainLayout extends Component{
                             chartType='دایره ای'
                             
                             /> 
-                   
+                    */}
                    
     
     

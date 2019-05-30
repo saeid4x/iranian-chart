@@ -12,7 +12,10 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 app.use(express.static(path.join(__dirname,"client","build")));
 app.use(routes);
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8000;
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"client","build","index.html"))
+  });
 app.listen(port,(err)=>{
     console.log('connected to port = \t',port);
 })
