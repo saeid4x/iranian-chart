@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../css/SideNav.css";
-import {Link} from 'react-router-dom';
-import Icon from '@material-ui/core/Icon'
+import {Link,NavLink} from 'react-router-dom';
+import Icon from '@material-ui/core/Icon';
+import Tooltip from '@material-ui/core/Tooltip'
 // import Paper from '@material-ui/core/Card'
 
 export default class extends Component {
@@ -9,16 +10,24 @@ export default class extends Component {
     return (
       <section className="sidenav">
         <section className="sidenav-avatar">
-            <img src='./img/2.png' />
-            <span><a href="#" target="_blank">سعید ایمانی </a></span>
+        <a href="https://github.com/saeid4x" target="_blank">
+
+          <Tooltip title="My Github Account" placement="left">
+            <img src='/img/3.png' />
+            </Tooltip>
+            </a>
+            <Tooltip title="My Github Account" placement="top">
+           
+            <span><a href="https://github.com/saeid4x" target="_blank">  سعید ایمانی    </a></span>
+            </Tooltip>
             <hr/>
          </section>
 
         <section className="sidenav-cat">
             <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/HeramSeni"><span>      نمودار هرم سنی ایران</span> </Link> </div><br/>
-            <div>  <Icon> check_circle_outline</Icon> <Link to="/iran/cat/population "><span>   نمودار جمعیت ایران   </span> </Link> </div><br/>
-            <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/emigrant "><span>  نمودار جمعیت مهاجر ایران    </span> </Link> </div><br/>
-            <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/students "><span>    نمودار آمار دانشجویان ایران  </span> </Link>  </div><br/>
+            <div>  <Icon> check_circle_outline</Icon> <Link to="/iran/cat/Population "><span>   نمودار جمعیت ایران   </span> </Link> </div><br/>
+            <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/Emigrant "><span>  نمودار جمعیت مهاجر ایران    </span> </Link> </div><br/>
+            <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/UniversityStudents "><span>    نمودار آمار دانشجویان ایران  </span> </Link>  </div><br/>
             <div>  <Icon> check_circle_outline</Icon><Link to="/iran/cat/gdp"><span>    نمودار تولید ناخالص ملی ایران  </span> </Link> </div><br/>
      
             

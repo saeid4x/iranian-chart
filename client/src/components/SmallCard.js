@@ -9,13 +9,13 @@ import '../css/SmallCard.css'
 export default class extends Component{
     render(){
         return(
-           <section className="smallCard">
+           <section className={`smallCard  ${this.props.cardClass}`}>
                <Card>
                    <CardContent>
                <section className="smallCard-left">
-                   <div className=""> <span>[unit]</span><span>5000000</span>   </div>
+                   <div className=""> <span>{this.props.cardUnit}</span><span> {this.props.cardNumber}</span>   </div>
                    <hr/>
-                   <div className=""> <span>تعداد مردان ایرانی </span></div>
+                   <div className=""> <span>{this.props.cardTitle}</span></div>
                 </section>
                 <section className="smallCard-right">
                     <img src="./img/2.png"/>

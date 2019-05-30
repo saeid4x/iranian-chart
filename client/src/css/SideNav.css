@@ -1,7 +1,7 @@
 .sidenav{
     border:1px solid red;
     width: 250px;
-    height: 600px;
+    height: 1500px;
     float: right;
     margin-right:5px;
     background-color: #0063B1
@@ -10,11 +10,12 @@
 .sidenav hr{
     opacity:0.2
 }
-.sidenav-avatar>img{
+.sidenav-avatar img{
     width: 150px;
     height: 150px;
-    border:1px solid green;
-    margin-left:20px;
+    /* border:1px solid green; */
+    
+    margin:20px 0 0 -20px;
     border-radius: 30%;
     }
 /* .sidenav-cat>span{
@@ -25,7 +26,7 @@
     .sidenav-avatar a{
         color:white;
         text-decoration: none;
-        margin-left: 50px;
+        margin-left:70px;
         font-size: 20px;
         /* text-shadow: 1px 1px 3px white; */
     }

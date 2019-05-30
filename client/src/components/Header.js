@@ -17,7 +17,7 @@ export default class extends Component {
   render() {
     return (
       <div className="Header">
-          <img src="./img/2.png" alt="logo"/>
+          <img src="/img/2.png" alt="logo"/>
           <span>آمار ایران</span>
          
       </div>

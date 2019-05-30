@@ -6,7 +6,12 @@ import { Radar } from 'react-chartjs-2';
 import PiChart from './PiChart';
 import RadarChart from './RadarChart';
 import BarChart from './BarChart';
-
+import Header from './Header';
+import SideNav from './SideNav';
+import SmallCard from './SmallCard';
+import Grid from '@material-ui/core/Grid'
+import "../css/MainLayout.css";
+ 
 
 
 export default class MainLayout extends Component{
@@ -14,6 +19,8 @@ export default class MainLayout extends Component{
         super(props);
 
     }
+    
+   
     state={
         info:{
             category:null,
@@ -27,101 +34,64 @@ export default class MainLayout extends Component{
             studentsTotal: [],
             year: [],
             gdpCountry: [],
-           
-            
-
         },
         dataChart: {}
        
     }
-
+   
     componentWillMount(){
-        var category=null;
-        var labels=[];
-        var totalMan=[];
-        var totalWomen=[];
-        var population=[];
-        var emigrantTotal=[];
-        var girlStudentsTotal=[];
-        var boyStudentsTotal=[];
-        var studentsTotal=[];
-        var year=[];    
-        var gdp=[];
-        
-    //    fetch(Keys.backendUrl+'/api/cat/'+this.props.match.params.cat).then((data)=>{
-    //         data.data.map((item,i)=>{
-                 
-    //             labels.push(item.labels);
-    //             totalMan.push(item.totalMan);
-    //             totalWomen.push(item.totalWomen)
-    //             population.push(item.population);
-    //             emigrantTotal.push(item.emigrantTotal);
-    //             girlStudentsTotal.push(item.girlStudentsTotal);
-    //             boyStudentsTotal.push(item.boyStudentsTotal);
-    //             studentsTotal.push(item.studentsTotal);
-    //             year.push(item.year);
-    //             gdp.push(item.gdpCountry)
-    //         });
-    //         // console.log('cat url=',this.props.match.params.cat);
-    //        var category=this.props.match.params.cat;
-            
+      
+      
+        // switch(this.props.match.params.cat){
+        //     case 'HeramSeni'{
+        //         cardUnit='نفر';
+        //         cardTitle=''
+        //     }
+        //     break;
 
-    //         this.setState({
-    //             info:{
-    //                 category:category,
-    //                 labels:labels,
-    //                 totalWomen: totalWomen,
-    //                 totalMan:totalMan,
-    //                 population: population,
-    //                 emigrantTotal: emigrantTotal,
-    //                 girlStudentsTotal:girlStudentsTotal,
-    //                 boyStudentsTotal:boyStudentsTotal,
-    //                 studentsTotal:studentsTotal,
-    //                 year: year,
-    //                 gdpCountry:gdp,
-                    
-        
-    //             }
-    //         });
-    //         console.log('category state=',this.state.info.category)
-            
-             
-    //         //  console.log(info)
-             
-             
-    //     }).catch((err)=>{
-    //         console.log('error axios=',err)
-    //     })
-       
-       
-           
-            
-          
         }
-    
+
+     
 
         
         render(){
           
             return(
-                <section>
+                <section className="MainLayout">
+
+                    <Header/>
+                    {/* <SideNav/> */}
+                    {/* <SmallCard cardClass="sc1"/>
+                    <SmallCard cardClass="sc2"/>
+                    <SmallCard cardClass="sc3"/> */}
+
+          <SideNav link="/iran/cat/:cat"/>
+                    
+ 
                    
                     <LineChart
                          cat={this.props.match.params.cat}
+                         chartType='خطی'
+                         
                     />
-                    <PiChart 
-                            cat={this.props.match.params.cat}/>
-                    <RadarChart 
-                    cat={this.props.match.params.cat}
-                    chartType='راداری'
-                    
-                     />
-                     <BarChart
+                    <BarChart
                      cat={this.props.match.params.cat}
                      chartType='میله ای'
 
                      />
+                     <RadarChart 
+                    cat={this.props.match.params.cat}
+                    chartType='راداری'
                     
+                     />
+                    
+                    <PiChart 
+                            cat={this.props.match.params.cat}
+                            chartType='دایره ای'
+                            
+                            /> 
+                   
+                   
     
     
                 </section>

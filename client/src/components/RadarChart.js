@@ -242,7 +242,7 @@ export default class extends Component{
            <section className="LineChart">
                <Card>
                    <CardContent>
-                   <div className="chart-title"><span>نمودار</span><span> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
+                   <div className="chart-title"><span>نمودار</span><span className="chartType"> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
                        <br/>
                        <hr/>
                        {/* place for Line Chart */}

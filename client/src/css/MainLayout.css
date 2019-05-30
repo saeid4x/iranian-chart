@@ -1,0 +1,29 @@
+   .sc1{
+       margin:10px 0 0 20px;
+
+   }
+   .sc2{
+       margin:-116px 0 0 380px
+
+
+   }
+   .sc3{
+    margin:-116px 0 0 740px
+
+   }
+   .LineChart{
+       border:1px solid green;
+       margin:10px 0 0 15px;
+       width: 37%
+   }
+   .BarChart{
+       margin:-336px 0 0 560px;
+       width:37%;
+   }
+   .PieChart{
+       width:37%;
+       margin:-336px 0 0 560px;
+   }
+.chartType{
+    color:#EA005E;
+}

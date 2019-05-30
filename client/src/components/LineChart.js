@@ -15,6 +15,7 @@ export default class extends Component{
      
     state={
         chartData: {},
+        chartCat:null,
        
         initData:{
             category:null,
@@ -90,9 +91,11 @@ export default class extends Component{
           
            
         }).then(()=>{
+            var chartCat;
             switch(this.props.cat){
                 case 'HeramSeni':
               {
+                chartCat='هرم سنی جمعیت';
                   console.log('hi');
                   chartData={
                       labels:this.state.initData.labels,
@@ -110,13 +113,15 @@ export default class extends Component{
                             ]
                   };//end chartData
                   this.setState({
-                    chartData:chartData
+                    chartData:chartData,
+                    chartCat:chartCat
                 })
                  
     
               }
               break;
               case 'gdp':{
+                chartCat='ناخالص ملی ایران';
                 chartData={
                     labels:this.state.initData.labels,
                     datasets:[
@@ -128,11 +133,13 @@ export default class extends Component{
                           ]
                 };//end chartData
                 this.setState({
-                  chartData:chartData
+                  chartData:chartData,
+                  chartCat:chartCat
               })
               }
               break;
               case 'Population':{
+                chartCat='جمعیت کشور ایران';
                 chartData={
                     labels:this.state.initData.labels,
                     datasets:[
@@ -154,11 +161,13 @@ export default class extends Component{
                           ]
                 };//end chartData
                 this.setState({
-                  chartData:chartData
+                  chartData:chartData,
+                  chartCat:chartCat
               })
               }
               break;
               case 'Emigrant':{
+                chartCat='تعداد مهاجرین'
                 chartData={
                     labels:this.state.initData.labels,
                     datasets:[
@@ -180,12 +189,15 @@ export default class extends Component{
                           ]
                 };//end chartData
                 this.setState({
-                  chartData:chartData
+                  chartData:chartData,
+                  chartCat:chartCat
               })
               }
               break;
               case 'UniversityStudents':{
+                chartCat='تعداد انشجویان ایران';
                 chartData={
+                   
                     labels:this.state.initData.labels,
                     datasets:[
                               {
@@ -206,7 +218,8 @@ export default class extends Component{
                           ]
                 };//end chartData
                 this.setState({
-                  chartData:chartData
+                  chartData:chartData,
+                  chartCat:chartCat
               })
               }
               break;
@@ -229,11 +242,12 @@ export default class extends Component{
            <section className="LineChart">
                <Card>
                    <CardContent>
-                   <div className="chart-title"><span>نمودار</span><span> {this.props.chartType}</span><span> {this.state.chartCategory}  </span></div>
+                   <div className="chart-title"><span>نمودار</span><span className="chartType"> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
                        <br/>
                        <hr/>
                        {/* place for Line Chart */}
                        <Line 
+                     
                         options={{
                             responsive:true
                         }}

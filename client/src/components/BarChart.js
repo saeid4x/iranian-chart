@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Icon from '@material-ui/core/Icon'
-import '../css/LineChart.css';
+// import '../css/LineChart.css';
 import {Bar} from 'react-chartjs-2';
 import Keys from '../config/Keys';
 import Axios from 'axios';
@@ -248,10 +248,10 @@ export default class extends Component{
 
     render(){
         return(
-           <section className="LineChart">
+           <section className="BarChart">
                <Card>
                    <CardContent>
-                        <div className="chart-title"><span>نمودار</span><span> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
+                        <div className="chart-title"><span>نمودار</span><span className="chartType"> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
                        <br/>
                        <hr/>
                        {/* place for Line Chart */}
@@ -259,6 +259,7 @@ export default class extends Component{
                         options={{
                             responsive:true
                         }}
+                       
                         data={this.state.chartData}
                        />
                        {console.log(this.state.chartData)}

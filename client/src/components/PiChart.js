@@ -16,6 +16,7 @@ export default class extends Component{
      
     state={
         chartData: {},
+        chartCat:null,
        
         initData:{
             category:null,
@@ -95,6 +96,7 @@ export default class extends Component{
             switch(this.props.cat){
                 case 'HeramSeni':
               {
+                var chartCategory='هرم سنی جمعیت';
 
                   console.log('pi chart=',this.state.initData.totalMan)
                   chartData={
@@ -115,14 +117,15 @@ export default class extends Component{
                        ]
                   };//end chartData
                   this.setState({
-                    chartData:chartData
+                    chartData:chartData,
+                    chartCat:chartCategory
                 })
                  
     
               }
               break;
               case 'gdp':{
-                
+                chartCategory='تولید ناخالص ملی ایران'
                 // console.log('pi chart=',this.state.initData.to)
                 chartData={
                      labels:this.state.initData.labels,
@@ -137,11 +140,13 @@ export default class extends Component{
                      ]
                 };//end chartData
                 this.setState({
-                  chartData:chartData
+                  chartData:chartData,
+                  chartCat:chartCategory
               })
               }
               break;
               case 'Population':{
+                chartCategory='جمعیت ایران'
                         // console.log('pi chart=',this.state.initData.to)
                         chartData={
                             labels:this.state.initData.labels,
@@ -169,11 +174,13 @@ export default class extends Component{
                             ]
                     };//end chartData
                     this.setState({
-                        chartData:chartData
+                        chartData:chartData,
+                        chartCat:chartCategory
                     })
             }
               break;
               case 'Emigrant':{
+                chartCategory='تعداد مهاجرین ایرانی';
                 chartData={
                     labels:this.state.initData.labels,
                     datasets:[
@@ -200,11 +207,13 @@ export default class extends Component{
                     ]
             };//end chartData
             this.setState({
-                chartData:chartData
+                chartData:chartData,
+                chartCat:chartCategory
             })
               }
               break;
               case 'UniversityStudents':{
+                chartCategory='تعداد دانشجویان ایرانی'
                   console.log('pie chart student=',this.state.initData.girlStudentsTotal)
                 chartData={
                     labels:this.state.initData.labels,
@@ -232,7 +241,8 @@ export default class extends Component{
                     ]
             };//end chartData
             this.setState({
-                chartData:chartData
+                chartData:chartData,
+                chartCat:chartCategory
             })
               }
               break;
@@ -252,10 +262,10 @@ export default class extends Component{
 
     render(){
         return(
-           <section className="LineChart">
+           <section className="PieChart">
                <Card>
                    <CardContent>
-                   <div className="chart-title"><span>نمودار</span><span> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
+                   <div className="chart-title"><span>نمودار</span><span className="chartType"> {this.props.chartType}</span><span> {this.state.chartCat}  </span></div>
                        <br/>
                        <hr/>
                        {/* place for   Chart */}
